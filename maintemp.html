@@ -1,0 +1,32 @@
+<html>
+<head>
+	<title>LocalLyrics</title>
+	 <link rel="stylesheet" type="text/css" href="app.css">
+</head>
+<body>
+	<h1> Your Location</h1>
+	<article>
+		{% for l in location %}
+			<p>{{l}}</p>
+		{% endfor %}
+	</article>
+	<h1>Search by another location
+		<form action="searchresponse" method="get">
+  			<input type="text" value="Enter city name" name="city"><br>
+			<input type="text" value="Enter region/state name" name="region"><br>
+  			<input type="submit" value="Submit" name="go">
+		</form>
+	</h1>
+	<article>
+		<h2>Artists near you</h2>
+		<div class="images">
+			{% for a in artists %}
+				<div class ="image">
+					<img src={{a.image}} alt = "artist image">
+					<p>{{a.name}}</p>
+					<p>{{a.image}}</p>
+				</div>
+			{% endfor %}
+	</article>
+</body>
+</html>
